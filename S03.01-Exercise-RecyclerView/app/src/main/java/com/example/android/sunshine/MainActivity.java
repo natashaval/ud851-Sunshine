@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         mErrorMessageDisplay = (TextView) findViewById(R.id.tv_error_message_display);
 
         // TODO (38) Create layoutManager, a LinearLayoutManager with VERTICAL orientation and shouldReverseLayout == false
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getBaseContext(), LinearLayoutManager.VERTICAL, false);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
         // TODO (39) Set the layoutManager on mRecyclerView
         mRecyclerView.setLayoutManager(layoutManager);
@@ -256,7 +256,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.action_refresh) {
             // TODO (46) Instead of setting the text to "", set the adapter to null before refreshing
-            mForecastAdapter = null;
+            mForecastAdapter.setWeatherData(null);
             loadWeatherData();
             return true;
         }
