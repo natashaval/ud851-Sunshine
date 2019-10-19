@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 return openWeather;
             } catch (Exception e) {
                 e.printStackTrace();
-                return null;F
+                return null;
             }
         }
 
